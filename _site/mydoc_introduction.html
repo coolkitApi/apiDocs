@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<title>Introduction | Jekyll theme for documentation</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/boxshadowproperties.css">
+<!-- most color styles are extracted out to here -->
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Anchor.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#tg-sb-link").click(function() {
+                $("#tg-sb-sidebar").toggle();
+                $("#tg-sb-content").toggleClass('col-md-9');
+                $("#tg-sb-content").toggleClass('col-md-12');
+                $("#tg-sb-icon").toggleClass('fa-toggle-on');
+                $("#tg-sb-icon").toggleClass('fa-toggle-off');
+            });
+        });
+    </script>
+    
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> 酷宅开放平台</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Introduction">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+  <div id="main">
+    <!-- Content Row -->
+    <div class="row">
+        
+        
+            <!-- Sidebar Column -->
+            <div class="col-md-3" id="tg-sb-sidebar">
+                
+
+<ul id="mysidebar" class="nav">
+  <li class="sidebarTitle">Jekyll Doc Theme 6.0</li>
+  
+  
+  
+      
+  
+  <li>
+      <a href="#">Overview</a>
+      <ul>
+          
+          
+          
+          <li><a href="index.html">Get started</a></li>
+          
+          
+          
+          
+          
+          
+          <li class="active"><a href="mydoc_introduction.html">Introduction</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_supported_features.html">Supported features</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_about.html">About the theme author</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_support.html">Support</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Release Notes</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_release_notes_60.html">6.0 Release notes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_release_notes_50.html">5.0 Release notes</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Installation</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_about_ruby_gems_etc.html">About Ruby, Gems, Bundler, etc.</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_install_jekyll_on_mac.html">Install Jekyll on Mac</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_install_jekyll_on_windows.html">Install Jekyll on Windows</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Authoring</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_pages.html">Pages</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_posts.html">Posts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_lists.html">Lists</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_conditional_logic.html">Conditional logic</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_content_reuse.html">Content reuse</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_collections.html">Collections</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_webstorm_text_editor.html">WebStorm editor tips</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_atom_text_editor.html">Atom editor tips</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Navigation</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_sidebar_navigation.html">Sidebar navigation</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_yaml_tutorial.html">YAML tutorial in the context of Jekyll</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_tags.html">Tags</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_series.html">Series</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Formatting</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_adding_tooltips.html">Tooltips</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_alerts.html">Alerts</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_icons.html">Icons</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_images.html">Images</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_code_samples.html">Code samples</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_labels.html">Labels</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_hyperlinks.html">Links</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_navtabs.html">Navtabs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_tables.html">Tables</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_syntax_highlighting.html">Syntax highlighting</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_workflow_maps.html">Workflow maps</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Handling reviews</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_commenting_on_files.html">Commenting on files</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Publishing</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_build_arguments.html">Build arguments</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_themes.html">Themes</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_generating_pdfs.html">Generating PDFs</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_help_api.html">Help APIs and UI tooltips</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_search_configuration.html">Search configuration</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_iterm_profiles.html">iTerm profiles</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_push_build_to_server.html">Pushing builds to server</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_publishing_github_pages.html">Publishing on Github Pages</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Special layouts</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_kb_layout.html">Knowledge-base layout</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_glossary.html">Glossary layout</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_faq_layout.html">FAQ layout</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a href="mydoc_shuffle.html">Shuffle layout</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Troubleshooting</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_troubleshooting.html">Troubleshooting</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a href="#">Tag archives</a>
+      <ul>
+          
+          
+          
+          <li><a href="mydoc_tag_archives_overview.html">Tag archives overview</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a href="#">Tag archive pages</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a href="tag_formatting.html">Formatting pages</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a href="tag_navigation.html">Navigation pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+          
+          
+          <li><a href="view.html"></a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a href="#">Tag archive pages</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a href="tag_formatting.html">Formatting pages</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+            </div>
+            
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+            <div class="post-header">
+   <h1 class="post-title-main">Introduction</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+    <a target="_blank" href="https://github.com/tomjoht/documentation-theme-jekyll/blob/gh-pages/pages/mydoc/mydoc_introduction.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Edit me</a>
+
+    
+
+   <h1 id="ckw01-c01应用指导书">CKW01-C01应用指导书</h1>
+
+<p><img src="D:\work\产品资料文件\产品资料文件\MD格式芯片模块规格书\LOGO.png" alt="LOGO" /></p>
+
+<h6 id="版本v10">版本V1.0</h6>
+
+<h6 id="版权2019">版权©2019</h6>
+
+<h2 id="关于本手册">关于本手册</h2>
+
+<p>​	本手册介绍了CKW01-C01的产品参数，包含以下章节。</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">章</th>
+      <th style="text-align: left"><strong>标题</strong></th>
+      <th style="text-align: left"><strong>内容</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">第一章</td>
+      <td style="text-align: left">产品简介</td>
+      <td style="text-align: left">概述CKW01-C01的特点、和功能</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">第二章</td>
+      <td style="text-align: left">芯片管脚说明</td>
+      <td style="text-align: left">介绍CKW01管脚功能和管脚定义{</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">第三章</td>
+      <td style="text-align: left">功能说明</td>
+      <td style="text-align: left">介绍CKW01芯片所提供的功能</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">第四章</td>
+      <td style="text-align: left">电气特性</td>
+      <td style="text-align: left">介绍CKW01芯片电气参数</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">第五章</td>
+      <td style="text-align: left">WIFI射频指标</td>
+      <td style="text-align: left">介绍CKW01芯片的射频指标</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">第六章</td>
+      <td style="text-align: left">管脚定义</td>
+      <td style="text-align: left">提供CKW01芯片管脚分布图f</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">第七章</td>
+      <td style="text-align: left">封装信息</td>
+      <td style="text-align: left">提供CKW01芯片封装信息</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="一--产品简介">一、  产品简介</h2>
+
+<p>​</p>
+
+<p>​	CKW01-C01是深圳酷宅科技有限公司（简称：酷宅科技）基于CKW01芯片方案开发的一款用于单通道智能</p>
+
+<p>Wi-Fi开关的解决方案，以其低功耗、紧凑设计和高稳定性满足客户需求。CKW01-C01能够实现Wi-Fi的搜索连接，</p>
+
+<p>网络服务器的通讯，手机app的控制等基本功能，实现远程控制，专为移动设备和物联网应用设计。</p>
+
+<h3 id="产品特性">产品特性</h3>
+
+<ul>
+  <li>
+    <p>支持无线802.11 b/g/n 标准</p>
+  </li>
+  <li>
+    <p>Wi-Fi @2.4 GHz，支持WPA/WPA2安全模式</p>
+  </li>
+  <li>
+    <p>802.11b 模式下+20.5dBm的最大输出功率</p>
+  </li>
+  <li>
+    <p>UMA认证标准</p>
+  </li>
+  <li>
+    <p>支持通过APP控制和获取芯片RELAY管脚状态</p>
+  </li>
+  <li>
+    <p>支持MAC上传</p>
+  </li>
+  <li>
+    <p>支持兼容配对模式和快速配对模式两种配置模式</p>
+  </li>
+  <li>
+    <p>支持最多8个定时器操作，支持重复定时器操作</p>
+  </li>
+  <li>
+    <p>支持RSSI获取和上传</p>
+  </li>
+  <li>
+    <p>支持OTA升级</p>
+  </li>
+  <li>
+    <p>支持通过APP设置设备上电后默认RELAY管脚状态（高/低，或保存断电前状态）</p>
+  </li>
+</ul>
+
+<h2 id="二芯片管脚说明">二、芯片管脚说明</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>管脚</th>
+      <th>名称</th>
+      <th>功能</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>GPIO22</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>GPIO21</td>
+      <td>Debug功能</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>GPIO20</td>
+      <td>ADCD端口（芯片内部ADC端口）</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>GPIO0</td>
+      <td>通道1继电器开关，高电平有效，上电默认低电平。</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>GPIO1</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>GPIO2</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>GPIO3</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>GPIO4</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>GPIO5</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>GPIO6</td>
+      <td>RXD1 烧写固件、数据</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>GPIO7</td>
+      <td>TXD1 烧写固件、数据</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>DVDDIO1</td>
+      <td>VDD 3V3电源m</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>LDO_EN</td>
+      <td>高电平有效，低电平芯片停止工作，外部需上拉电阻10K电阻到3.3V，下拉100nF电容到地。</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>GPIO8</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>GPIO9</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>GPIO10</td>
+      <td>Wi-Fi状态指示灯，低电平有效。</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>GPIO11</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>GPIO12</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>GPIO13</td>
+      <td>通道1开关引脚，低电平有效。APP配置引脚，当低电平&gt;5S进入配置模式。</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>VDD33_USB</td>
+      <td>USB 3V3电源</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>HSDP</td>
+      <td>HSDP</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>HSDM</td>
+      <td>HSDM</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>VDD33_DCDC</td>
+      <td>模拟电源VDD 3V3</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>VDDLX_DCDC</td>
+      <td>串一个4.7uH 620mA电感连接到Pin25、37</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>VDD16_DCDC</td>
+      <td>DCDC 1V6</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>DVDD12</td>
+      <td>数字电源1.2V输入，下拉1uF电容到地。</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>DVDDIO3</td>
+      <td>VDD 3V3电源</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>GPIO14</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>GPIO15</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>GPIO16</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>GPIO17</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>GPIO18</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>GPIO19</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>XTALI</td>
+      <td>晶振输入端</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>XTALO</td>
+      <td>晶振输出端</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>VDD33_SX</td>
+      <td>模拟电源VDD 3V3</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>VDD16D</td>
+      <td>模拟电源VDD 1V6</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>VDD33_SX</td>
+      <td>模拟电源VDD 3V3</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>VDD33_RF</td>
+      <td>模拟电源VDD 3V3</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>VDD33_RF</td>
+      <td>模拟电源VDD 3V3</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>GND</td>
+      <td>GND</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>NC</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>GND</td>
+      <td>GND</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>GND</td>
+      <td>GND</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>GND</td>
+      <td>GND</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>RF_IO</td>
+      <td>但建议保留π型匹配网络对天线进行匹配</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>NC</td>
+      <td>NC</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>NC</td>
+      <td>NC</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>​	芯片底部散热焊盘为GND焊盘。</p>
+
+<h2 id="三功能说明">三、功能说明</h2>
+
+<p>​</p>
+
+<h4 id="31-wi-fi状态灯闪烁方式说明">3.1 Wi-Fi状态灯闪烁方式说明</h4>
+
+<p>​			设备端Wi-Fi状态灯的闪烁方式表征设备当前的网络工作状态，具体状态包括以下七种：</p>
+
+<p><img src="D:\work\产品资料文件\产品资料文件\MD格式芯片模块规格书\LED灯闪烁说明.png" alt="" /></p>
+
+<p>​							图 1.2  设备状态与Wi-Fi状态灯闪烁方式关系示意图</p>
+
+<p>​	Wi-Fi状态灯的闪烁特征以2秒为一个周期，如图所示，低电平灯亮，高电平灯灭。各状态详解：</p>
+
+<p>A .  Normal : 设备正常工作，与云服务器连接正常。此时可以通过APP操控设备。在其它任何模式下，</p>
+
+<p>​      都无法通过 APP操控设备。</p>
+
+<p>B .  NO Wifi：设备无法连接到无线路由器。</p>
+
+<p>C .  No Server：设备已经连接上无线路由器，但是无法连接到服务器（就是通常理解下的“无法上网”）。</p>
+
+<p>D . Unregistered：表示设备还没有被绑定到任何账户下。一般的，设备需要与易微联账号绑定才可与云服务器</p>
+
+<p>​      通信。在易微联APP“添加设备”可完成绑定操作。</p>
+
+<p>E .  Upgrade：表示设备正在固件升级。</p>
+
+<p>F .  Setting G1：表示设备正处于兼容配对模式。配置模式用于设备获取移动终端APP提供的加入服务网络的必要</p>
+
+<p>​      信息，包括路由器ssid、password和服务器ip、端口号等。</p>
+
+<p>G . Setting G2：表示设备正处于快速配对模式。配置模式用于设备获取移动终端APP提供的加入服务网络的必要</p>
+
+<p>​      信息，包括路由器ssid、password和服务器ip、端口号等。两种配置，设备获取相关信息的方式不同，详见下</p>
+
+<p>​      节所述。</p>
+
+<h4 id="32wi-fi模块的基本工作流程">3.2  Wi-Fi模块的基本工作流程</h4>
+
+<p>​	I． 配置</p>
+
+<p>​	      设备模块在未加入局域网时就是一个“信息孤岛”，设备端操作配合易微联APP设置，使设备获取加入服务</p>
+
+<p>网络的必要信息，包括路由器ssid、password和服务器ip、端口号等。模块内置两种配置方式：</p>
+
+<p>​	      1、兼容配对模式：移动终端作为station加入该AP组成局域网实现数据交互。快速配对模式（G状态，</p>
+
+<p>​	            详情见3.1 Wi-Fi状态灯闪烁方式说明）下长按配置按键5S，设备进入兼容配对模式。点击易微联APP</p>
+
+<p>​                    添 加设备（iOS移动终端需在“设置”菜单内手动连接ssid：ITEAD-10000XXXX， password12345678</p>
+
+<p>​                    的热Android终端无需此操作），输入家庭路由器的ssid和password，完成设备的上线准备工作。</p>
+
+<p>​	      2、快速配对模式：此方式Wi-Fi模块处于混杂模式（Wi-Fi Promiscuous），通过空快速配对模式：此方</p>
+
+<p>​                    式Wi-Fi模块处于混杂模式（Wi-Fi Promiscuous），通过空空抓包的形式获取移动终端发出的包含ssid</p>
+
+<p>​                    和password等信息的加密报文。上节所述A~D任意一个状态内长按配置按键5S，设备进入快速配对模</p>
+
+<p>​                    式。点击易微联APP添加设备，输入家庭路由器的ssid和password，完成设备的上线配置工作。</p>
+
+<p>​</p>
+
+<p>​	II． 上线</p>
+
+<p>​	        设备模块从上电到连接服务器，需经历以下流程：</p>
+
+<p>​		1、加入所配置路由器，连接Internet。</p>
+
+<p>​		2、连接服务器。</p>
+
+<p>​		3、注册设备，绑定至易微联账户。</p>
+
+<p>​		4、获取设备应用参数，保持在线 。</p>
+
+<p>​		以上各个步骤，当连接/获取失败时，均有相应的退避策略和重连接机制，确保设备稳定、实时在线。</p>
+
+<p>​	III． 升级</p>
+
+<p>​		模块设备连接升级服务器，下载更新至最新版本固件，实现设备的在线升级。</p>
+
+<h4 id="33定时器功能">3.3定时器功能</h4>
+
+<p>​	定时器功能通过APP配置，实现设备在指定时间或循环周期地控制RELAY开关。定时器分为以下4种:</p>
+
+<ol>
+  <li>单次定时器：在指定时间执行操作。</li>
+  <li>延时定时器：经过所设置的时间执行操作。</li>
+  <li>循环定时器：周循环执行操作。
+ . 重复定时器：日重复执行操作。</li>
+</ol>
+
+<h4 id="34-定时功能说明">3.4 定时功能说明</h4>
+
+<p>​	CKW01-C01支持定时器操作，为了方便客户使用以及让其使用在更多的场景下，易微联APP提供了四种定时模式：</p>
+
+<ol>
+  <li>
+    <p>单次定时：这个是最普通的定时设置，让用户可以设置这个设备的工作日程。比如那一天几点几分启动或者关</p>
+
+    <p>闭，或者每周三几点几分启动或者关闭等。跟闹钟的设置类似，尤其是对重复在某些时刻要运行的设备，定时</p>
+
+    <p>后使用起来非常方便。</p>
+  </li>
+  <li>
+    <p>延时定时：延时是为了方便用户进行一次性快速的定时操作，比如在多久之后执行启动或者关闭的动作，可以</p>
+
+    <p>非常方便的将某个设备打开后，让它运行一段时间然后关闭。本设备最多支持24小时的延时操作。</p>
+  </li>
+  <li>
+    <p>循环定时：对于某些设备，为了可以更方便的在某个场景下使用，易微联推出的循环定时设置，可以让一个设</p>
+
+    <p>备从某个时刻开始，不断循环做一个事情。比如，让鱼缸的打氧泵从现在开始，每一小时启动一次，每次打氧</p>
+
+    <p>20分钟后关闭，然后重复自动循环，保证鱼缸的氧气充足而无需人工干预。</p>
+  </li>
+  <li>
+    <p>重复定时：重复定时是方便无需在次日进行同时间设置定时操作。比如，设定上班时间闹钟，时间设置好后，</p>
+
+    <p>选择日期（日期天数为一周可选），闹钟就会在选择的日期内设定的时间开启。</p>
+  </li>
+</ol>
+
+<h2 id="四ckw01电气特性">四、CKW01电气特性</h2>
+
+<p>​</p>
+
+<h4 id="1--硬件参数">1 . 硬件参数</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>参数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>芯片型号</td>
+      <td>CKW01</td>
+    </tr>
+    <tr>
+      <td>工作电压</td>
+      <td>2.1V~3.46V</td>
+    </tr>
+    <tr>
+      <td>工作电流</td>
+      <td>平均电流：80mA<br /> 最大工作电流：345mA</td>
+    </tr>
+    <tr>
+      <td>工作温度</td>
+      <td>-0℃~45℃</td>
+    </tr>
+    <tr>
+      <td>封装大小</td>
+      <td>6mm×6mm</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="2--wi-fi参数">2 . WI-FI参数</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>类型</th>
+      <th>项目</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>无线标准</td>
+      <td>IEEE 802.11b/g/n</td>
+    </tr>
+    <tr>
+      <td>频率范围</td>
+      <td>2.412GHz-2.484GHz</td>
+    </tr>
+    <tr>
+      <td>发射功率</td>
+      <td>802.11b: +19±2dBm (@11Mbps)<br /> 802.11g: +16±2dBm (@54Mbps)<br /> 802.11n: +15±2dBm (@HT20,MCS7)</td>
+    </tr>
+    <tr>
+      <td>接收灵敏度</td>
+      <td>802.11b: -88 dBm (@11Mbps ,CCK)<br /> 802.11g: -73.5 dBm (@54Mbps, OFDM)<br /> 802.11n: -72.5 dBm (MCS7)</td>
+    </tr>
+    <tr>
+      <td>天线类型</td>
+      <td>PCB板载天线，外置天线，IPEX接口天线，陶瓷贴片天线</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="五wifi射频指标">五、WIFI射频指标</h2>
+
+<h4 id="1--灵敏度">1 . 灵敏度</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>描述</th>
+      <th>最小值</th>
+      <th>通常</th>
+      <th>最大值</th>
+      <th style="text-align: center">单位mA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CCK 1Mbps</td>
+      <td> </td>
+      <td>-95.5</td>
+      <td> </td>
+      <td style="text-align: center">dBm</td>
+    </tr>
+    <tr>
+      <td>CCK 11Mbps</td>
+      <td> </td>
+      <td>-88</td>
+      <td> </td>
+      <td style="text-align: center">dBm</td>
+    </tr>
+    <tr>
+      <td>6Mbps(1/2BPSK)</td>
+      <td> </td>
+      <td>-91.5</td>
+      <td> </td>
+      <td style="text-align: center">dBm</td>
+    </tr>
+    <tr>
+      <td>54Mbps(3/4 64-QAM)</td>
+      <td> </td>
+      <td>-73.5</td>
+      <td> </td>
+      <td style="text-align: center">dBm</td>
+    </tr>
+    <tr>
+      <td>HT20，MCS7（65Mbps，72.2Mbps)</td>
+      <td> </td>
+      <td>-72.5</td>
+      <td> </td>
+      <td style="text-align: center">dBm</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="2--邻频抑制">2 . 邻频抑制</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>描述</th>
+      <th>最小值</th>
+      <th style="text-align: center">通常</th>
+      <th>最大值</th>
+      <th style="text-align: center">单位mA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OFDM，6Mbps</td>
+      <td> </td>
+      <td style="text-align: center">39</td>
+      <td> </td>
+      <td style="text-align: center">dB</td>
+    </tr>
+    <tr>
+      <td>OFDM，54Mbps</td>
+      <td> </td>
+      <td style="text-align: center">23</td>
+      <td> </td>
+      <td style="text-align: center">dB</td>
+    </tr>
+    <tr>
+      <td>HT20，MCS0</td>
+      <td> </td>
+      <td style="text-align: center">38</td>
+      <td> </td>
+      <td style="text-align: center">dB</td>
+    </tr>
+    <tr>
+      <td>HT20，MCS7</td>
+      <td> </td>
+      <td style="text-align: center">21</td>
+      <td> </td>
+      <td style="text-align: center">dB</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="六ckw01管脚定义">六、CKW01管脚定义</h2>
+
+<p>​</p>
+
+<p>​	管脚定义如下图所示：</p>
+
+<p>​																																															<img src="D:\work\产品资料文件\产品资料文件\MD格式芯片模块规格书\CKW01.png" alt="" /></p>
+
+<h2 id="七ckw01封装信息">七、CKW01封装信息</h2>
+
+<ul>
+  <li>封装类型：QFN-48L</li>
+  <li>芯片尺寸大小：6mm x 6mm</li>
+</ul>
+
+<p>​	<img src="D:\work\产品资料文件\产品资料文件\MD格式芯片模块规格书\CKW01 封装.png" alt="CKW01 封装" /></p>
+
+<p>​</p>
+
+<hr />
+
+<p><img src="D:\work\产品资料文件\产品资料文件\MD格式芯片模块规格书\QQQQQ.bmp" alt="QQQQQ" /></p>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'idratherbewriting'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+</div>
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+               &copy;2019 Your company. All rights reserved. <br />
+ Site last generated: Mar 14, 2019 <br />
+<p><img src="images/company_logo.png" alt="Company logo"/></p>
+                </div>
+            </div>
+</footer>
+
+
+        </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>
+<!-- /#main -->
+    </div>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-66296557-1','auto');ga('require','displayfeatures');ga('send','pageview');</script>
+
+
+</html>
